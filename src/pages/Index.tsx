@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Phone, Clock, Star, CheckCircle, ArrowRight, Users, ShoppingCart, CreditCard, Home } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -168,7 +167,7 @@ const Index = () => {
               </p>
               <Button 
                 onClick={() => window.open(whatsappLink, '_blank')}
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 text-lg rounded-full shadow-lg transform transition hover:scale-105"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-full shadow-lg transform transition hover:scale-105"
               >
                 🔥 Fazer pedido pelo WhatsApp – 11 98272-2426
               </Button>
@@ -380,7 +379,7 @@ const Index = () => {
       <footer className="bg-gray-800 text-white py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-400 mb-4">
-            © 2024 Temperos Artesanais - Sabor de verdade na sua cozinha
+            © 2024 Quallity Temperos - Sabor de verdade na sua cozinha
           </p>
           <p className="text-gray-400">
             WhatsApp: (11) 98272-2426 | Pagamento via Pix | Entrega em todo Brasil
