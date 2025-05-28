@@ -9,6 +9,7 @@ const Index = () => {
   const { toast } = useToast();
   const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 59, seconds: 59 });
   const [leadForm, setLeadForm] = useState({ name: '', phone: '' });
+  const [selectedTemperos, setSelectedTemperos] = useState<number[]>([]);
 
   // Countdown timer
   useEffect(() => {
@@ -126,6 +127,31 @@ const Index = () => {
     }
   ];
 
+  const toggleTemperoSelection = (temperoId: number) => {
+    setSelectedTemperos(prev => 
+      prev.includes(temperoId) 
+        ? prev.filter(id => id !== temperoId)
+        : [...prev, temperoId]
+    );
+  };
+
+  const handleSelectedTemperos = () => {
+    if (selectedTemperos.length === 0) {
+      toast({
+        title: "Atenção!",
+        description: "Selecione pelo menos um tempero antes de fazer o pedido.",
+      });
+      return;
+    }
+
+    const selectedItems = temperos.filter(tempero => selectedTemperos.includes(tempero.id));
+    const itemsList = selectedItems.map(item => `- ${item.name} (${item.price})`).join('\n');
+    const selectedMessage = `Olá! Gostaria de fazer um pedido dos seguintes temperos:\n\n${itemsList}\n\nPode me ajudar com o pedido?`;
+    const selectedWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(selectedMessage)}`;
+    
+    window.open(selectedWhatsappLink, '_blank');
+  };
+
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (leadForm.name && leadForm.phone) {
@@ -147,10 +173,10 @@ const Index = () => {
       {/* Fixed CTA Button */}
       <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
         <Button 
-          onClick={() => window.open(whatsappLink, '_blank')}
+          onClick={handleSelectedTemperos}
           className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 text-lg rounded-full shadow-lg animate-pulse"
         >
-          🔥 Fazer Pedido no WhatsApp
+          🔥 Fazer Pedido no WhatsApp ({selectedTemperos.length} selecionados)
         </Button>
       </div>
 
@@ -214,29 +240,45 @@ const Index = () => {
       {/* Products Section */}
       <section className="py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
             Os 10 Temperos Mais Vendidos
           </h2>
+          <p className="text-center text-gray-600 mb-12">
+            Clique nos temperos para selecioná-los e depois clique no botão verde para fazer seu pedido!
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {temperos.map((tempero) => (
-              <Card key={tempero.id} className="group hover:shadow-lg transition-shadow duration-300">
+              <Card 
+                key={tempero.id} 
+                className={`group hover:shadow-lg transition-all duration-300 cursor-pointer ${
+                  selectedTemperos.includes(tempero.id) 
+                    ? 'ring-2 ring-green-500 bg-green-50' 
+                    : 'hover:scale-105'
+                }`}
+                onClick={() => toggleTemperoSelection(tempero.id)}
+              >
                 <CardContent className="p-4">
-                  <img 
-                    src={tempero.image} 
-                    alt={tempero.name}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
-                  />
+                  <div className="relative">
+                    <img 
+                      src={tempero.image} 
+                      alt={tempero.name}
+                      className="w-full h-48 object-cover rounded-lg mb-4"
+                    />
+                    {selectedTemperos.includes(tempero.id) && (
+                      <div className="absolute top-2 right-2 bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
+                        <CheckCircle className="w-5 h-5" />
+                      </div>
+                    )}
+                  </div>
                   <h3 className="font-bold text-lg text-gray-900 mb-2">{tempero.name}</h3>
                   <p className="text-gray-600 text-sm mb-3">{tempero.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-red-600">{tempero.price}</span>
-                    <Button 
-                      size="sm" 
-                      className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open(whatsappLink, '_blank')}
-                    >
-                      Pedir
-                    </Button>
+                    <span className={`text-sm font-medium ${
+                      selectedTemperos.includes(tempero.id) ? 'text-green-600' : 'text-gray-500'
+                    }`}>
+                      {selectedTemperos.includes(tempero.id) ? 'Selecionado!' : 'Clique para selecionar'}
+                    </span>
                   </div>
                 </CardContent>
               </Card>
@@ -244,10 +286,10 @@ const Index = () => {
           </div>
           <div className="text-center mt-12">
             <Button 
-              onClick={() => window.open(whatsappLink, '_blank')}
+              onClick={handleSelectedTemperos}
               className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 text-xl rounded-full shadow-lg"
             >
-              🟢 Quero esses sabores! Me chama no WhatsApp
+              🟢 Quero esses sabores! Me chama no WhatsApp ({selectedTemperos.length} selecionados)
             </Button>
           </div>
         </div>
@@ -264,15 +306,15 @@ const Index = () => {
               <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <ShoppingCart className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">1. Escolha</h3>
-              <p className="text-gray-600">Selecione seus temperos favoritos</p>
+              <h3 className="font-bold text-lg mb-2">1. Selecione</h3>
+              <p className="text-gray-600">Clique nos temperos que deseja</p>
             </div>
             <div className="text-center">
               <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="font-bold text-lg mb-2">2. WhatsApp</h3>
-              <p className="text-gray-600">Clique e fale conosco</p>
+              <p className="text-gray-600">Clique no botão verde para finalizar</p>
             </div>
             <div className="text-center">
               <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
