@@ -170,39 +170,40 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Fixed CTA Button */}
-      <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden">
+      {/* Fixed CTA Button - Mobile Only */}
+      <div className="fixed bottom-4 left-2 right-2 z-50 md:hidden">
         <Button 
           onClick={handleSelectedTemperos}
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 text-lg rounded-full shadow-lg animate-pulse"
+          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 text-sm rounded-full shadow-lg animate-pulse"
         >
-          🔥 Fazer Pedido no WhatsApp ({selectedTemperos.length} selecionados)
+          🔥 Fazer Pedido ({selectedTemperos.length})
         </Button>
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-yellow-50 to-green-50 px-4 py-12 md:py-20">
+      <section className="relative bg-gradient-to-br from-yellow-50 to-green-50 px-4 py-8 md:py-20">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="text-center md:text-left">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+            <div className="text-center md:text-left order-2 md:order-1">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">
                 Sabor de verdade direto na sua cozinha!
               </h1>
-              <p className="text-lg md:text-xl text-gray-700 mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
                 Conheça os temperos artesanais mais vendidos e receba em casa com pagamento fácil via Pix!
               </p>
               <Button 
                 onClick={() => window.open(whatsappLink, '_blank')}
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-full shadow-lg transform transition hover:scale-105"
+                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-lg rounded-full shadow-lg transform transition hover:scale-105"
               >
-                🔥 Fazer pedido pelo WhatsApp – 11 98272-2426
+                🔥 Fazer pedido pelo WhatsApp
               </Button>
+              <p className="text-xs sm:text-sm text-gray-600 mt-2">(11) 98272-2426</p>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center order-1 md:order-2">
               <img 
-                src="/placeholder.svg?height=400&width=400&text=Temperos+Artesanais" 
+                src="/placeholder.svg?height=300&width=300&text=Temperos+Artesanais" 
                 alt="Temperos artesanais em potes e sacos" 
-                className="rounded-2xl shadow-2xl max-w-full h-auto"
+                className="rounded-2xl shadow-2xl w-full max-w-sm md:max-w-full h-auto"
               />
             </div>
           </div>
@@ -210,43 +211,45 @@ const Index = () => {
       </section>
 
       {/* Offer Section */}
-      <section className="bg-red-600 text-white py-8 px-4">
+      <section className="bg-red-600 text-white py-6 md:py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4">
             🎉 OFERTA ESPECIAL - SÓ HOJE! 🎉
           </h2>
-          <p className="text-xl mb-4">Combo dos 5 mais vendidos com 10% OFF</p>
-          <div className="flex justify-center gap-4 mb-6">
-            <div className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold">
-              <Clock className="inline w-5 h-5 mr-1" />
+          <p className="text-lg sm:text-xl mb-4">Combo dos 5 mais vendidos com 10% OFF</p>
+          <div className="flex justify-center gap-2 sm:gap-4 mb-4 md:mb-6">
+            <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
+              <Clock className="inline w-4 h-4 sm:w-5 sm:h-5 mr-1" />
               {String(timeLeft.hours).padStart(2, '0')}h
             </div>
-            <div className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold">
+            <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
               {String(timeLeft.minutes).padStart(2, '0')}m
             </div>
-            <div className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold">
+            <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
               {String(timeLeft.seconds).padStart(2, '0')}s
             </div>
           </div>
           <Button 
             onClick={() => window.open(comboWhatsappLink, '_blank')}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-full shadow-lg"
+            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-lg rounded-full shadow-lg"
           >
-            🟢 QUERO ESTA OFERTA! (WhatsApp)
+            🟢 QUERO ESTA OFERTA!
           </Button>
         </div>
       </section>
 
       {/* Products Section */}
-      <section className="py-16 px-4 bg-yellow-50">
+      <section className="py-12 md:py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 md:mb-4">
             Os 10 Temperos Mais Vendidos
           </h2>
-          <p className="text-center text-gray-600 mb-12">
+          <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm sm:text-base px-4">
             Clique nos temperos para selecioná-los e depois clique no botão verde para fazer seu pedido!
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          
+          {/* Mobile: 1 column, Tablet: 2 columns, Desktop: 3 columns, Large: 4 columns */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {temperos.map((tempero) => (
               <Card 
                 key={tempero.id} 
@@ -257,105 +260,106 @@ const Index = () => {
                 }`}
                 onClick={() => toggleTemperoSelection(tempero.id)}
               >
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="relative">
                     <img 
                       src={tempero.image} 
                       alt={tempero.name}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
+                      className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg mb-3 md:mb-4"
                     />
                     {selectedTemperos.includes(tempero.id) && (
-                      <div className="absolute top-2 right-2 bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5" />
+                      <div className="absolute top-2 right-2 bg-green-500 text-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
+                        <CheckCircle className="w-3 h-3 sm:w-5 sm:h-5" />
                       </div>
                     )}
                   </div>
-                  <h3 className="font-bold text-lg text-gray-900 mb-2">{tempero.name}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{tempero.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-red-600">{tempero.price}</span>
-                    <span className={`text-sm font-medium ${
+                  <h3 className="font-bold text-sm sm:text-lg text-gray-900 mb-1 sm:mb-2 leading-tight">{tempero.name}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed">{tempero.description}</p>
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
+                    <span className="text-lg sm:text-2xl font-bold text-red-600">{tempero.price}</span>
+                    <span className={`text-xs sm:text-sm font-medium ${
                       selectedTemperos.includes(tempero.id) ? 'text-green-600' : 'text-gray-500'
                     }`}>
-                      {selectedTemperos.includes(tempero.id) ? 'Selecionado!' : 'Clique para selecionar'}
+                      {selectedTemperos.includes(tempero.id) ? 'Selecionado!' : 'Toque para selecionar'}
                     </span>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <div className="text-center mt-12">
+          
+          <div className="text-center mt-8 md:mt-12">
             <Button 
               onClick={handleSelectedTemperos}
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 text-xl rounded-full shadow-lg"
+              className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-12 text-sm sm:text-xl rounded-full shadow-lg"
             >
-              🟢 Quero esses sabores! Me chama no WhatsApp ({selectedTemperos.length} selecionados)
+              🟢 Quero esses sabores! ({selectedTemperos.length} selecionados)
             </Button>
           </div>
         </div>
       </section>
 
       {/* How it Works */}
-      <section className="py-16 px-4">
+      <section className="py-12 md:py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 md:mb-12">
             Como Funciona
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <div className="text-center">
-              <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <ShoppingCart className="w-8 h-8 text-red-600" />
+              <div className="bg-red-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <ShoppingCart className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">1. Selecione</h3>
-              <p className="text-gray-600">Clique nos temperos que deseja</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">1. Selecione</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Clique nos temperos que deseja</p>
             </div>
             <div className="text-center">
-              <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-green-600" />
+              <div className="bg-green-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">2. WhatsApp</h3>
-              <p className="text-gray-600">Clique no botão verde para finalizar</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">2. WhatsApp</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Clique no botão verde para finalizar</p>
             </div>
             <div className="text-center">
-              <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <CreditCard className="w-8 h-8 text-yellow-600" />
+              <div className="bg-yellow-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <CreditCard className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">3. Pague via Pix</h3>
-              <p className="text-gray-600">Pagamento rápido e seguro</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">3. Pague via Pix</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Pagamento rápido e seguro</p>
             </div>
             <div className="text-center">
-              <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Home className="w-8 h-8 text-green-600" />
+              <div className="bg-green-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <Home className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2">4. Receba em casa</h3>
-              <p className="text-gray-600">Entrega rápida e segura</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">4. Receba em casa</h3>
+              <p className="text-gray-600 text-sm sm:text-base">Entrega rápida e segura</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-green-50">
+      <section className="py-12 md:py-16 px-4 bg-green-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 md:mb-12">
             O que nossos clientes dizem
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {depoimentos.map((depoimento, index) => (
               <Card key={index} className="text-center">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <img 
                     src={depoimento.image} 
                     alt={depoimento.name}
-                    className="w-16 h-16 rounded-full mx-auto mb-4"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 md:mb-4"
                   />
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-3 md:mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4 italic">"{depoimento.text}"</p>
-                  <p className="font-bold text-gray-900">{depoimento.name}</p>
+                  <p className="text-gray-600 mb-3 md:mb-4 italic text-sm sm:text-base">"{depoimento.text}"</p>
+                  <p className="font-bold text-gray-900 text-sm sm:text-base">{depoimento.name}</p>
                 </CardContent>
               </Card>
             ))}
@@ -364,12 +368,12 @@ const Index = () => {
       </section>
 
       {/* Lead Form */}
-      <section className="py-16 px-4 bg-red-600">
+      <section className="py-12 md:py-16 px-4 bg-red-600">
         <div className="max-w-md mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 md:mb-4">
             Receba ofertas exclusivas!
           </h2>
-          <p className="text-red-100 mb-8">
+          <p className="text-red-100 mb-6 md:mb-8 text-sm sm:text-base">
             Deixe seus dados e receba promoções especiais direto no WhatsApp
           </p>
           <form onSubmit={handleLeadSubmit} className="space-y-4">
@@ -378,7 +382,7 @@ const Index = () => {
               placeholder="Seu nome"
               value={leadForm.name}
               onChange={(e) => setLeadForm({...leadForm, name: e.target.value})}
-              className="w-full"
+              className="w-full text-sm sm:text-base"
               required
             />
             <Input 
@@ -386,12 +390,12 @@ const Index = () => {
               placeholder="Seu WhatsApp"
               value={leadForm.phone}
               onChange={(e) => setLeadForm({...leadForm, phone: e.target.value})}
-              className="w-full"
+              className="w-full text-sm sm:text-base"
               required
             />
             <Button 
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3"
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 text-sm sm:text-base"
             >
               Quero receber ofertas!
             </Button>
@@ -400,34 +404,37 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 px-4 bg-gray-900 text-white">
+      <section className="py-12 md:py-16 px-4 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8">
             Transforme sua comida com sabor de verdade
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-lg sm:text-xl text-gray-300 mb-6 md:mb-8">
             Não perca mais tempo com temperos sem sabor. Experimente a diferença dos nossos temperos artesanais!
           </p>
           <Button 
             onClick={() => window.open(whatsappLink, '_blank')}
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-6 px-12 text-xl rounded-full shadow-lg transform transition hover:scale-105"
+            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-4 sm:py-6 px-8 sm:px-12 text-lg sm:text-xl rounded-full shadow-lg transform transition hover:scale-105"
           >
-            🟢 Quero fazer meu pedido! (WhatsApp)
+            🟢 Quero fazer meu pedido!
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4">
+      <footer className="bg-gray-800 text-white py-6 md:py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-400 mb-2 md:mb-4 text-sm sm:text-base">
             © 2024 Quallity Temperos - Sabor de verdade na sua cozinha
           </p>
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-xs sm:text-sm">
             WhatsApp: (11) 98272-2426 | Pagamento via Pix | Entrega em todo Brasil
           </p>
         </div>
       </footer>
+
+      {/* Bottom padding for mobile fixed button */}
+      <div className="h-20 md:hidden"></div>
     </div>
   );
 };
