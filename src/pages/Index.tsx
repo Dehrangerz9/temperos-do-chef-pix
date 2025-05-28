@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Phone, Clock, Star, CheckCircle, ArrowRight, Users, ShoppingCart, CreditCard, Home } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -155,7 +156,7 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 to-yellow-50 px-4 py-12 md:py-20">
+      <section className="relative bg-gradient-to-br from-yellow-50 to-green-50 px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left">
@@ -167,7 +168,7 @@ const Index = () => {
               </p>
               <Button 
                 onClick={() => window.open(whatsappLink, '_blank')}
-                className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 text-lg rounded-full shadow-lg transform transition hover:scale-105"
+                className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 text-lg rounded-full shadow-lg transform transition hover:scale-105"
               >
                 🔥 Fazer pedido pelo WhatsApp – 11 98272-2426
               </Button>
@@ -212,7 +213,7 @@ const Index = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Os 10 Temperos Mais Vendidos
@@ -229,7 +230,7 @@ const Index = () => {
                   <h3 className="font-bold text-lg text-gray-900 mb-2">{tempero.name}</h3>
                   <p className="text-gray-600 text-sm mb-3">{tempero.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-orange-600">{tempero.price}</span>
+                    <span className="text-2xl font-bold text-red-600">{tempero.price}</span>
                     <Button 
                       size="sm" 
                       className="bg-green-600 hover:bg-green-700"
@@ -261,8 +262,8 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <ShoppingCart className="w-8 h-8 text-orange-600" />
+              <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <ShoppingCart className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="font-bold text-lg mb-2">1. Escolha</h3>
               <p className="text-gray-600">Selecione seus temperos favoritos</p>
@@ -275,15 +276,15 @@ const Index = () => {
               <p className="text-gray-600">Clique e fale conosco</p>
             </div>
             <div className="text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <CreditCard className="w-8 h-8 text-blue-600" />
+              <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <CreditCard className="w-8 h-8 text-yellow-600" />
               </div>
               <h3 className="font-bold text-lg mb-2">3. Pague via Pix</h3>
               <p className="text-gray-600">Pagamento rápido e seguro</p>
             </div>
             <div className="text-center">
-              <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Home className="w-8 h-8 text-purple-600" />
+              <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Home className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="font-bold text-lg mb-2">4. Receba em casa</h3>
               <p className="text-gray-600">Entrega rápida e segura</p>
@@ -293,7 +294,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-green-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             O que nossos clientes dizem
@@ -322,12 +323,12 @@ const Index = () => {
       </section>
 
       {/* Lead Form */}
-      <section className="py-16 px-4 bg-orange-600">
+      <section className="py-16 px-4 bg-red-600">
         <div className="max-w-md mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Receba ofertas exclusivas!
           </h2>
-          <p className="text-orange-100 mb-8">
+          <p className="text-red-100 mb-8">
             Deixe seus dados e receba promoções especiais direto no WhatsApp
           </p>
           <form onSubmit={handleLeadSubmit} className="space-y-4">
