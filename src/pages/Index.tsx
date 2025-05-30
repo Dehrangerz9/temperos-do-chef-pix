@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Phone, Clock, Star, CheckCircle, ArrowRight, Users, ShoppingCart, CreditCard, Home } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -391,7 +392,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6 md:py-8 px-4">
+      <footer className="bg-gray-800 text-white py-4 md:py-8 px-4 w-full">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-400 mb-2 md:mb-4 text-sm sm:text-base">
             © 2024 Quallity Temperos - Sabor de verdade na sua cozinha
@@ -403,7 +404,7 @@ const Index = () => {
       </footer>
 
       {/* Bottom padding for mobile fixed button */}
-      <div className="h-20 md:hidden"></div>
+      <div className="h-20 md:hidden bg-gray-800"></div>
     </div>
   );
 };
