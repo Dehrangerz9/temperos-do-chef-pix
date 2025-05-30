@@ -170,7 +170,7 @@ const Index = () => {
             </div>
             <div className="flex justify-center order-1 md:order-2">
               <img 
-                src="/logo quality.png" 
+                src="/logo-quality.png" 
                 alt="Temperos artesanais em potes e sacos" 
                 className="rounded-2xl  w-full max-w-sm md:max-w-full h-auto"
               />
