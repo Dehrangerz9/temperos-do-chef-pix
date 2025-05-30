@@ -166,7 +166,7 @@ const Index = () => {
                 onClick={() => window.open(whatsappLink, '_blank')}
                 className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-lg rounded-full shadow-lg transform transition hover:scale-105"
               >
-                🔥 Fazer pedido pelo WhatsApp (11) 98272-2426
+                🔥 Fazer pedido pelo WhatsApp
               </Button>
             </div>
             <div className="flex justify-center order-1 md:order-2">
