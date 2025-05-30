@@ -39,91 +39,69 @@ const Index = () => {
   const temperos = [
     {
       id: 1,
-      name: "Tempero Baiano Premium",
-      description: "Mistura especial com pimentas, coentro e dendê",
-      price: "R$ 24,90",
-      image: "/placeholder.svg?height=200&width=200&text=Tempero+Baiano"
+      name: "Tempero Chimichurri",
+      description: "Feito de ervas desidratadas, como a salsinha, o orégano e o manjericão, entre outras",
+      price: "R$ 00,00",
+      image: "/tempero-chimichurri.png"
     },
     {
       id: 2,
-      name: "Ervas Finas Gourmet",
-      description: "Seleção de ervas frescas desidratadas",
-      price: "R$ 19,90",
-      image: "/placeholder.svg?height=200&width=200&text=Ervas+Finas"
+      name: "Pimenta Rosa",
+      description: "Toque suave e aromático para seus pratos.",
+      price: "R$ 00,00",
+      image: "/tempero-pimenta-rosa.png"
     },
     {
       id: 3,
-      name: "Pimenta Artesanal",
-      description: "Blend de pimentas especiais da região",
-      price: "R$ 22,90",
-      image: "/placeholder.svg?height=200&width=200&text=Pimenta+Mix"
+      name: "Pimenta Do Reino",
+      description: "Sabor intenso e clássico para realçar receitas.",
+      price: "R$ 00,00",
+      image: "/tempero-pimenta-do-reino.png"
     },
     {
       id: 4,
-      name: "Tempero para Churrasco",
-      description: "O segredo do sabor perfeito na carne",
-      price: "R$ 26,90",
-      image: "/placeholder.svg?height=200&width=200&text=Churrasco"
+      name: "Oregano",
+      description: "Aroma mediterrâneo para pizzas e molhos.",
+      price: "R$ 00,00",
+      image: "/tempero-oregano.png"
     },
     {
       id: 5,
-      name: "Alho e Ervas",
-      description: "Combinação clássica para todos os pratos",
-      price: "R$ 18,90",
-      image: "/placeholder.svg?height=200&width=200&text=Alho+Ervas"
+      name: "Coentro",
+      description: "Fresco e marcante, ideal para pratos tropicais.",
+      price: "R$ 00,00",
+      image: "/tempero-coentro.png"
     },
     {
       id: 6,
-      name: "Açafrão Premium",
-      description: "Açafrão puro de alta qualidade",
-      price: "R$ 32,90",
-      image: "/placeholder.svg?height=200&width=200&text=Açafrão"
+      name: "Canela",
+      description: "Doce e aromática, perfeita para sobremesas e chás.",
+      price: "R$ 00,00",
+      image: "/tempero-canela.png"
     },
     {
       id: 7,
-      name: "Curry Caseiro",
-      description: "Mistura aromática de especiarias indianas",
-      price: "R$ 28,90",
-      image: "/placeholder.svg?height=200&width=200&text=Curry"
-    },
-    {
-      id: 8,
-      name: "Páprica Defumada",
-      description: "Sabor defumado especial para carnes",
-      price: "R$ 21,90",
-      image: "/placeholder.svg?height=200&width=200&text=Páprica"
-    },
-    {
-      id: 9,
-      name: "Tempero Italiano",
-      description: "Herbs de Provence e manjericão",
-      price: "R$ 23,90",
-      image: "/placeholder.svg?height=200&width=200&text=Italiano"
-    },
-    {
-      id: 10,
-      name: "Mix Completo",
-      description: "Nossa mistura mais popular e versátil",
-      price: "R$ 29,90",
-      image: "/placeholder.svg?height=200&width=200&text=Mix+Completo"
-    }
-  ];
+      name: "Cebolinha",
+      description: "Toque fresco e suave para finalizar receitas.",
+      price: "R$ 00,00",
+      image: "/tempero-cebolinha.png"
+    }];
 
   const depoimentos = [
     {
       name: "Maria Silva",
       text: "Meu tempero favorito! Transformou completamente minha comida.",
-      image: "/placeholder.svg?height=60&width=60&text=M"
+      image: "/depoimento-1.png"
     },
     {
       name: "João Santos",
       text: "Qualidade incrível, entrega rápida. Super recomendo!",
-      image: "/placeholder.svg?height=60&width=60&text=J"
+      image: "/depoimento-2.png"
     },
     {
       name: "Ana Costa",
       text: "O sabor é único, minha família adora! Já sou cliente fiel.",
-      image: "/placeholder.svg?height=60&width=60&text=A"
+      image: "/depoimento-3.png"
     }
   ];
 
@@ -171,14 +149,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Fixed CTA Button - Mobile Only */}
-      <div className="fixed bottom-4 left-2 right-2 z-50 md:hidden">
-        <Button 
-          onClick={handleSelectedTemperos}
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 text-sm rounded-full shadow-lg animate-pulse"
-        >
-          🔥 Fazer Pedido ({selectedTemperos.length})
-        </Button>
-      </div>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-yellow-50 to-green-50 px-4 py-8 md:py-20">
@@ -195,15 +165,14 @@ const Index = () => {
                 onClick={() => window.open(whatsappLink, '_blank')}
                 className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-lg rounded-full shadow-lg transform transition hover:scale-105"
               >
-                🔥 Fazer pedido pelo WhatsApp
+                🔥 Fazer pedido pelo WhatsApp (11) 98272-2426
               </Button>
-              <p className="text-xs sm:text-sm text-gray-600 mt-2">(11) 98272-2426</p>
             </div>
             <div className="flex justify-center order-1 md:order-2">
               <img 
-                src="/placeholder.svg?height=300&width=300&text=Temperos+Artesanais" 
+                src="/logo quality.png" 
                 alt="Temperos artesanais em potes e sacos" 
-                className="rounded-2xl shadow-2xl w-full max-w-sm md:max-w-full h-auto"
+                className="rounded-2xl  w-full max-w-sm md:max-w-full h-auto"
               />
             </div>
           </div>
@@ -275,8 +244,8 @@ const Index = () => {
                   </div>
                   <h3 className="font-bold text-sm sm:text-lg text-gray-900 mb-1 sm:mb-2 leading-tight">{tempero.name}</h3>
                   <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed">{tempero.description}</p>
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
-                    <span className="text-lg sm:text-2xl font-bold text-red-600">{tempero.price}</span>
+                  <div className="flex sm:flex-row sm:justify-between sm:items-center gap-2 lg:gap-0 items-center">
+                    <span className="text-lg  font-bold text-red-600">{tempero.price}</span>
                     <span className={`text-xs sm:text-sm font-medium ${
                       selectedTemperos.includes(tempero.id) ? 'text-green-600' : 'text-gray-500'
                     }`}>
@@ -428,7 +397,7 @@ const Index = () => {
             © 2024 Quallity Temperos - Sabor de verdade na sua cozinha
           </p>
           <p className="text-gray-400 text-xs sm:text-sm">
-            WhatsApp: (11) 98272-2426 | Pagamento via Pix | Entrega em todo Brasil
+            WhatsApp: (11) 98272-2426 | Pagamento via Pix
           </p>
         </div>
       </footer>
