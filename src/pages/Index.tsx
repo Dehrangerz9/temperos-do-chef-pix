@@ -397,9 +397,24 @@ const Index = () => {
           <p className="text-gray-400 mb-2 md:mb-4 text-sm sm:text-base">
             © 2024 Quallity Temperos - Sabor de verdade na sua cozinha
           </p>
-          <p className="text-gray-400 text-xs sm:text-sm">
+          <p className="text-gray-400 text-xs sm:text-sm mb-4">
             WhatsApp: (11) 98272-2426 | Pagamento via Pix
           </p>
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-gray-400 text-xs sm:text-sm">Desenvolvido por</span>
+            <a 
+              href="https://baloonmkt.com.br" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <img 
+                src="/lovable-uploads/31ada4f5-7c94-479a-b0a6-0bacbe0a2024.png" 
+                alt="Baloon Marketing" 
+                className="h-6 sm:h-8"
+              />
+            </a>
+          </div>
         </div>
       </footer>
 
