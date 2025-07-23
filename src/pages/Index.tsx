@@ -62,7 +62,7 @@ const Index = () => {
       name: "Tempero Chimichurri",
       description:
         "Feito de ervas desidratadas, como a salsinha, o orégano e o manjericão, entre outras",
-      price: "R$ 32,00",
+      price: "R$ 32,00/KG",
       image: "/tempero-chimichurri.png",
     },
     {
@@ -70,15 +70,15 @@ const Index = () => {
       name: "Açãfrão Premium",
       description:
         "Açafrão-da-terra de alta qualidade, com sabor marcante e coloração intensa para pratos mediterrâneos.",
-      price: "R$ 15,00",
-      image: "/tempero-acafrao.webp",
+      price: "R$ 15,00/KG",
+      image: "/tempero-acafrao-premium.jpg",
     },
     {
       id: 3,
       name: "Colorau Max Quallity",
       description:
         "Colorau em pó premium, adiciona sabor e cor vibrante, ideal para carnes e arroz.",
-      price: "R$ 20,00",
+      price: "R$ 20,00/KG",
       image: "/tempero-colorau.webp",
     },
     {
@@ -86,8 +86,19 @@ const Index = () => {
       name: "Pápricas",
       description:
         "Páprica doce em pó, com leve defumação, excelente para carnes, legumes e molhos.",
-      price: "R$ 20,00",
+      price: "R$ 20,00/KG",
       image: "/tempero-paprica.webp",
+    },
+    {
+      id:5,
+      name: "Coentro Em Grão",
+      description:
+        "Conhecido no mundo inteiro por seu aroma e sabor, o manjericão em flocos desidratado é utilizado nas mais diversas receitas, além dos muitos benefícios que traz para saúde.",
+      price: "R$ 12,00/KG",
+      image:"/tempero-coentro-em-grao.jpg",
+    },
+    {
+      id:6,
     },
   ];
 
@@ -226,7 +237,7 @@ const Index = () => {
       <section className="py-12 md:py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 md:mb-4">
-            Os 04 Temperos Mais Vendidos
+            Os 10 Temperos Mais Vendidos
           </h2>
           <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm sm:text-base px-4">
             Clique nos temperos para selecioná-los e depois clique no botão
@@ -264,8 +275,8 @@ const Index = () => {
                   <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed">
                     {tempero.description}
                   </p>
-                  <div className="flex sm:flex-row sm:justify-between sm:items-center gap-2 lg:gap-0 items-center">
-                    <span className="text-lg  font-bold text-red-600">
+                  <div className="flex sm:flex-row sm:justify-between sm:items-center gap-4 lg:gap-0 items-center">
+                    <span className="text-md  font-bold text-red-600">
                       {tempero.price}
                     </span>
                     <span
@@ -277,7 +288,7 @@ const Index = () => {
                     >
                       {selectedTemperos.includes(tempero.id)
                         ? "Selecionado!"
-                        : "Toque para selecionar"}
+                        : "Selecionar"}
                     </span>
                   </div>
                 </CardContent>
