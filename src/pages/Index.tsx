@@ -62,50 +62,32 @@ const Index = () => {
       name: "Tempero Chimichurri",
       description:
         "Feito de ervas desidratadas, como a salsinha, o orégano e o manjericão, entre outras",
-      price: "R$ 00,00",
+      price: "R$ 32,00",
       image: "/tempero-chimichurri.png",
     },
     {
       id: 2,
-      name: "Pimenta Rosa",
-      description: "Toque suave e aromático para seus pratos.",
-      price: "R$ 00,00",
-      image: "/tempero-pimenta-rosa.png",
+      name: "Açãfrão Premium",
+      description:
+        "Açafrão-da-terra de alta qualidade, com sabor marcante e coloração intensa para pratos mediterrâneos.",
+      price: "R$ 15,00",
+      image: "/tempero-acafrao.webp",
     },
     {
       id: 3,
-      name: "Pimenta Do Reino",
-      description: "Sabor intenso e clássico para realçar receitas.",
-      price: "R$ 00,00",
-      image: "/tempero-pimenta-do-reino.png",
+      name: "Colorau Max Quallity",
+      description:
+        "Colorau em pó premium, adiciona sabor e cor vibrante, ideal para carnes e arroz.",
+      price: "R$ 20,00",
+      image: "/tempero-colorau.webp",
     },
     {
       id: 4,
-      name: "Oregano",
-      description: "Aroma mediterrâneo para pizzas e molhos.",
-      price: "R$ 00,00",
-      image: "/tempero-oregano.png",
-    },
-    {
-      id: 5,
-      name: "Coentro",
-      description: "Fresco e marcante, ideal para pratos tropicais.",
-      price: "R$ 00,00",
-      image: "/tempero-coentro.png",
-    },
-    {
-      id: 6,
-      name: "Canela",
-      description: "Doce e aromática, perfeita para sobremesas e chás.",
-      price: "R$ 00,00",
-      image: "/tempero-canela.png",
-    },
-    {
-      id: 7,
-      name: "Cebolinha",
-      description: "Toque fresco e suave para finalizar receitas.",
-      price: "R$ 00,00",
-      image: "/tempero-cebolinha.png",
+      name: "Pápricas",
+      description:
+        "Páprica doce em pó, com leve defumação, excelente para carnes, legumes e molhos.",
+      price: "R$ 20,00",
+      image: "/tempero-paprica.webp",
     },
   ];
 
@@ -244,7 +226,7 @@ const Index = () => {
       <section className="py-12 md:py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 md:mb-4">
-            Os 10 Temperos Mais Vendidos
+            Os 04 Temperos Mais Vendidos
           </h2>
           <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm sm:text-base px-4">
             Clique nos temperos para selecioná-los e depois clique no botão
