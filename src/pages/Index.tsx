@@ -110,7 +110,7 @@ const Index = () => {
       id:7,
       name: "Alho Frito",
       description:
-      "O Alho é um dos temperos/condimentos mais consumidos do mundo. Ingrediente essencial na cozinha. Use em todas as preparações culinárias em substituição ao alho fresco. Pode ser utilizado cru ou refogado conforme o gosto. Muito utilizado no arroz, em sopas, molhos e carnes. Frito fica ótimo aplicado sobre pizzas. Desidratado ele é indicado em todas as preparações do alho fresco, basta hidratá-lo em água gelada ou adicioná-lo seco em sopas e molhos. Alho desidratado pode ser armazenado sem refrigeração. A desidratação consiste basicamente na retirada de água livre do produto, com o mínimo de alteração nas características de cor, odor e sabor. A secagem não afeta os teores de fibras, proteínas, gorduras e cinzas, porém reduz açúcares, acidez e vitamina C. Importante: Conservar em recipiente fechado com tampa, em local seco, fresco e arejado.",
+      "Alho crocante e aromático, ideal para finalizar pratos, temperar arroz, sopas, molhos e carnes.",
       price:"R$32,00/KG",
       image:"/tempero-alho-frito.jpg",
     },
@@ -118,7 +118,7 @@ const Index = () => {
       id:8,
       name: "Pimenta do Reino em Pó",
       description:
-      "O Alho é um dos temperos/condimentos mais consumidos do mundo. Ingrediente essencial na cozinha. Use em todas as preparações culinárias em substituição ao alho fresco. Pode ser utilizado cru ou refogado conforme o gosto. Muito utilizado no arroz, em sopas, molhos e carnes. Frito fica ótimo aplicado sobre pizzas. Desidratado ele é indicado em todas as preparações do alho fresco, basta hidratá-lo em água gelada ou adicioná-lo seco em sopas e molhos. Alho desidratado pode ser armazenado sem refrigeração. A desidratação consiste basicamente na retirada de água livre do produto, com o mínimo de alteração nas características de cor, odor e sabor. A secagem não afeta os teores de fibras, proteínas, gorduras e cinzas, porém reduz açúcares, acidez e vitamina C. Importante: Conservar em recipiente fechado com tampa, em local seco, fresco e arejado.",
+      "Pimenta preta moída, de sabor intenso e picante, perfeita para carnes, molhos e massas.",
       price:"R$50,00/KG",
       image:"/tempero-pimenta-do-reino.jpg",
     },
@@ -126,7 +126,7 @@ const Index = () => {
       id:9,
       name: "Páprica Defumada em Pó",
       description:
-      "Na Quallity Temperos, transformamos o pimentão vermelho em um tempero que é uma verdadeira obra-prima: a Páprica Defumada em Pó. Enquanto a páprica tradicional é desidratada apenas pelo calor, a nossa passa por um processo especial que a eleva a outro nível.Para criar essa especiaria com um sabor e aroma defumado extraordinário, o pimentão é cuidadosamente desidratado sob a fumaça. Esse método artesanal confere à nossa páprica uma profundidade de sabor e um perfume inconfundível, que você não encontra em nenhum outro lugar.Existem dois tipos principais de páprica, a doce e a picante, e o que as diferencia é o tipo de pimentão utilizado na sua preparação. Na Quallity Temperos, selecionamos os melhores para garantir a intensidade e a autenticidade que você busca.Um Toque Internacional que Conquistou o Brasil.Originária da culinária espanhola, a Páprica Defumada ganhou um lugar de destaque no Brasil, especialmente em pratos típicos baianos e mineiros, que abraçaram seu sabor marcante. Na Quallity Temperos, celebramos essa fusão de culturas e oferecemos uma páprica que honra essa tradição.Sabor e Saúde em Cada Pitada.Além de sua cor vibrante e sabor característico, a Páprica Defumada em Pó Quallity Temperos também é uma aliada da sua saúde. Ela é rica em antioxidantes, contribuindo para o bem-estar do seu organismo enquanto realça o sabor de suas receitas.Experimente a Páprica Defumada em Pó Quallity Temperos e descubra como um simples tempero pode transformar suas refeições em uma experiência gastronômica memorável.",
+      "Páprica com toque defumado e levemente adocicado, excelente para carnes, legumes e molhos.",
       price:"R$20,00/KG",
       image:"/tempero-paprica-defumada-em-po.jpg",
     },
@@ -134,7 +134,7 @@ const Index = () => {
       id:10,
       name: "Caldo de Costela",
       description:
-      "Na Quallity Temperos, nosso Caldo de Costela em Pó é mais que um tempero, é um concentrado de sabor que transforma suas refeições. Desenvolvido com uma seleção especial de condimentos, ele foi criado para dar um toque especial e autêntico aos seus alimentos.Perfeito para o preparo de uma infinidade de pratos, nosso caldo é ideal para refogados, molhos ricos, massas, sopas reconfortantes, arroz soltinho, feijão com sabor de casa e muito mais. Ele se dissolve facilmente, distribuindo o sabor intenso da costela por toda a sua receita, sem complicação.Com o Caldo de Costela em Pó Quallity Temperos, você leva a praticidade para a sua cozinha sem abrir mão do sabor que só a Quallity Temperos pode oferecer.",
+      "Tempero em pó com sabor concentrado de costela, ótimo para refogados, sopas, feijões e molhos.",
       price:"R$10,00/KG",
       image:"/tempero-caldo-de-costela.jpg",
     },
