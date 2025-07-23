@@ -94,7 +94,7 @@ const Index = () => {
       id:5,
       name: "Coentro Em Grão",
       description:
-        "Conhecido no mundo inteiro por seu aroma e sabor, o manjericão em flocos desidratado é utilizado nas mais diversas receitas, além dos muitos benefícios que traz para saúde.",
+        "Coentro em grãos, de aroma marcante e sabor levemente cítrico, ideal para caldos, ensopados e marinadas.",
       price: "R$ 12,00/KG",
       image:"/tempero-coentro-em-grao.jpg",
     },
@@ -102,7 +102,7 @@ const Index = () => {
       id:6,
       name: "Manjericão",
       description:
-      "Conhecido no mundo inteiro por seu aroma e sabor, o manjericão em flocos desidratado é utilizado nas mais diversas receitas, além dos muitos benefícios que traz para saúde.",
+      "Manjericão desidratado em flocos, com aroma fresco e adocicado, perfeito para massas, molhos e pizzas.",
       price:"R$20,00/KG",
       image:"/tempero-manjericao.jpg",
     },
