@@ -1,6 +1,15 @@
-
-import React, { useState, useEffect } from 'react';
-import { Phone, Clock, Star, CheckCircle, ArrowRight, Users, ShoppingCart, CreditCard, Home } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Phone,
+  Clock,
+  Star,
+  CheckCircle,
+  ArrowRight,
+  Users,
+  ShoppingCart,
+  CreditCard,
+  Home,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,14 +17,18 @@ import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const { toast } = useToast();
-  const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 59, seconds: 59 });
-  const [leadForm, setLeadForm] = useState({ name: '', phone: '' });
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 23,
+    minutes: 59,
+    seconds: 59,
+  });
+  const [leadForm, setLeadForm] = useState({ name: "", phone: "" });
   const [selectedTemperos, setSelectedTemperos] = useState<number[]>([]);
 
   // Countdown timer
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
+      setTimeLeft((prev) => {
         if (prev.seconds > 0) {
           return { ...prev, seconds: prev.seconds - 1 };
         } else if (prev.minutes > 0) {
@@ -31,85 +44,75 @@ const Index = () => {
   }, []);
 
   const whatsappNumber = "5511982722426";
-  const whatsappMessage = "Olá! Vi o site dos temperos artesanais e gostaria de fazer um pedido. Pode me ajudar?";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappMessage =
+    "Olá! Vi o site dos temperos artesanais e gostaria de fazer um pedido. Pode me ajudar?";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
 
-  const comboMessage = "Olá! Quero aproveitar a oferta especial do Combo dos 5 temperos mais vendidos com 10% OFF!";
-  const comboWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(comboMessage)}`;
+  const comboMessage =
+    "Olá! Quero aproveitar a oferta especial do Combo dos 5 temperos mais vendidos com 10% OFF!";
+  const comboWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    comboMessage
+  )}`;
 
   const temperos = [
     {
       id: 1,
       name: "Tempero Chimichurri",
-      description: "Feito de ervas desidratadas, como a salsinha, o orégano e o manjericão, entre outras",
-      price: "R$ 00,00",
-      image: "/tempero-chimichurri.png"
+      description:
+        "Feito de ervas desidratadas, como a salsinha, o orégano e o manjericão, entre outras",
+      price: "R$ 32,00",
+      image: "/tempero-chimichurri.png",
     },
     {
       id: 2,
-      name: "Pimenta Rosa",
-      description: "Toque suave e aromático para seus pratos.",
-      price: "R$ 00,00",
-      image: "/tempero-pimenta-rosa.png"
+      name: "Açãfrão Premium",
+      description:
+        "Açafrão-da-terra de alta qualidade, com sabor marcante e coloração intensa para pratos mediterrâneos.",
+      price: "R$ 15,00",
+      image: "/tempero-acafrao.webp",
     },
     {
       id: 3,
-      name: "Pimenta Do Reino",
-      description: "Sabor intenso e clássico para realçar receitas.",
-      price: "R$ 00,00",
-      image: "/tempero-pimenta-do-reino.png"
+      name: "Colorau Max Quallity",
+      description:
+        "Colorau em pó premium, adiciona sabor e cor vibrante, ideal para carnes e arroz.",
+      price: "R$ 20,00",
+      image: "/tempero-colorau.webp",
     },
     {
       id: 4,
-      name: "Oregano",
-      description: "Aroma mediterrâneo para pizzas e molhos.",
-      price: "R$ 00,00",
-      image: "/tempero-oregano.png"
+      name: "Pápricas",
+      description:
+        "Páprica doce em pó, com leve defumação, excelente para carnes, legumes e molhos.",
+      price: "R$ 20,00",
+      image: "/tempero-paprica.webp",
     },
-    {
-      id: 5,
-      name: "Coentro",
-      description: "Fresco e marcante, ideal para pratos tropicais.",
-      price: "R$ 00,00",
-      image: "/tempero-coentro.png"
-    },
-    {
-      id: 6,
-      name: "Canela",
-      description: "Doce e aromática, perfeita para sobremesas e chás.",
-      price: "R$ 00,00",
-      image: "/tempero-canela.png"
-    },
-    {
-      id: 7,
-      name: "Cebolinha",
-      description: "Toque fresco e suave para finalizar receitas.",
-      price: "R$ 00,00",
-      image: "/tempero-cebolinha.png"
-    }];
+  ];
 
   const depoimentos = [
     {
       name: "Maria Silva",
       text: "Meu tempero favorito! Transformou completamente minha comida.",
-      image: "/depoimento-1.png"
+      image: "/depoimento-1.png",
     },
     {
       name: "João Santos",
       text: "Qualidade incrível, entrega rápida. Super recomendo!",
-      image: "/depoimento-2.png"
+      image: "/depoimento-2.png",
     },
     {
       name: "Ana Costa",
       text: "O sabor é único, minha família adora! Já sou cliente fiel.",
-      image: "/depoimento-3.png"
-    }
+      image: "/depoimento-3.png",
+    },
   ];
 
   const toggleTemperoSelection = (temperoId: number) => {
-    setSelectedTemperos(prev => 
-      prev.includes(temperoId) 
-        ? prev.filter(id => id !== temperoId)
+    setSelectedTemperos((prev) =>
+      prev.includes(temperoId)
+        ? prev.filter((id) => id !== temperoId)
         : [...prev, temperoId]
     );
   };
@@ -123,27 +126,35 @@ const Index = () => {
       return;
     }
 
-    const selectedItems = temperos.filter(tempero => selectedTemperos.includes(tempero.id));
-    const itemsList = selectedItems.map(item => `- ${item.name} (${item.price})`).join('\n');
+    const selectedItems = temperos.filter((tempero) =>
+      selectedTemperos.includes(tempero.id)
+    );
+    const itemsList = selectedItems
+      .map((item) => `- ${item.name} (${item.price})`)
+      .join("\n");
     const selectedMessage = `Olá! Gostaria de fazer um pedido dos seguintes temperos:\n\n${itemsList}\n\nPode me ajudar com o pedido?`;
-    const selectedWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(selectedMessage)}`;
-    
-    window.open(selectedWhatsappLink, '_blank');
+    const selectedWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      selectedMessage
+    )}`;
+
+    window.open(selectedWhatsappLink, "_blank");
   };
 
   const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (leadForm.name && leadForm.phone) {
       const leadMessage = `Olá! Meu nome é ${leadForm.name} e meu WhatsApp é ${leadForm.phone}. Gostaria de conhecer mais sobre os temperos artesanais!`;
-      const leadWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(leadMessage)}`;
-      window.open(leadWhatsappLink, '_blank');
-      
+      const leadWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        leadMessage
+      )}`;
+      window.open(leadWhatsappLink, "_blank");
+
       toast({
         title: "Sucesso!",
         description: "Redirecionando para o WhatsApp...",
       });
-      
-      setLeadForm({ name: '', phone: '' });
+
+      setLeadForm({ name: "", phone: "" });
     }
   };
 
@@ -160,19 +171,20 @@ const Index = () => {
                 Sabor de verdade direto na sua cozinha!
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 md:mb-8">
-                Conheça os temperos artesanais mais vendidos e receba em casa com pagamento fácil via Pix!
+                Conheça os temperos artesanais mais vendidos e receba em casa
+                com pagamento fácil via Pix!
               </p>
-              <Button 
-                onClick={() => window.open(whatsappLink, '_blank')}
+              <Button
+                onClick={() => window.open(whatsappLink, "_blank")}
                 className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-lg rounded-full shadow-lg transform transition hover:scale-105"
               >
                 🔥 Fazer pedido pelo WhatsApp
               </Button>
             </div>
             <div className="flex justify-center order-1 md:order-2">
-              <img 
-                src="/logo-quality.png" 
-                alt="Temperos artesanais em potes e sacos" 
+              <img
+                src="/logo-quality.png"
+                alt="Temperos artesanais em potes e sacos"
                 className="rounded-2xl  w-full max-w-sm md:max-w-full h-auto"
               />
             </div>
@@ -186,21 +198,23 @@ const Index = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4">
             🎉 OFERTA ESPECIAL - SÓ HOJE! 🎉
           </h2>
-          <p className="text-lg sm:text-xl mb-4">Combo dos 5 mais vendidos com 10% OFF</p>
+          <p className="text-lg sm:text-xl mb-4">
+            Combo dos 5 mais vendidos com 10% OFF
+          </p>
           <div className="flex justify-center gap-2 sm:gap-4 mb-4 md:mb-6">
             <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
               <Clock className="inline w-4 h-4 sm:w-5 sm:h-5 mr-1" />
-              {String(timeLeft.hours).padStart(2, '0')}h
+              {String(timeLeft.hours).padStart(2, "0")}h
             </div>
             <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
-              {String(timeLeft.minutes).padStart(2, '0')}m
+              {String(timeLeft.minutes).padStart(2, "0")}m
             </div>
             <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
-              {String(timeLeft.seconds).padStart(2, '0')}s
+              {String(timeLeft.seconds).padStart(2, "0")}s
             </div>
           </div>
-          <Button 
-            onClick={() => window.open(comboWhatsappLink, '_blank')}
+          <Button
+            onClick={() => window.open(comboWhatsappLink, "_blank")}
             className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-sm sm:text-lg rounded-full shadow-lg"
           >
             🟢 QUERO ESTA OFERTA!
@@ -212,28 +226,29 @@ const Index = () => {
       <section className="py-12 md:py-16 px-4 bg-yellow-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 md:mb-4">
-            Os 10 Temperos Mais Vendidos
+            Os 04 Temperos Mais Vendidos
           </h2>
           <p className="text-center text-gray-600 mb-8 md:mb-12 text-sm sm:text-base px-4">
-            Clique nos temperos para selecioná-los e depois clique no botão verde para fazer seu pedido!
+            Clique nos temperos para selecioná-los e depois clique no botão
+            verde para fazer seu pedido!
           </p>
-          
+
           {/* Mobile: 1 column, Tablet: 2 columns, Desktop: 3 columns, Large: 4 columns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {temperos.map((tempero) => (
-              <Card 
-                key={tempero.id} 
+              <Card
+                key={tempero.id}
                 className={`group hover:shadow-lg transition-all duration-300 cursor-pointer ${
-                  selectedTemperos.includes(tempero.id) 
-                    ? 'ring-2 ring-green-500 bg-green-50' 
-                    : 'hover:scale-105'
+                  selectedTemperos.includes(tempero.id)
+                    ? "ring-2 ring-green-500 bg-green-50"
+                    : "hover:scale-105"
                 }`}
                 onClick={() => toggleTemperoSelection(tempero.id)}
               >
                 <CardContent className="p-3 sm:p-4">
                   <div className="relative">
-                    <img 
-                      src={tempero.image} 
+                    <img
+                      src={tempero.image}
                       alt={tempero.name}
                       className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg mb-3 md:mb-4"
                     />
@@ -243,23 +258,35 @@ const Index = () => {
                       </div>
                     )}
                   </div>
-                  <h3 className="font-bold text-sm sm:text-lg text-gray-900 mb-1 sm:mb-2 leading-tight">{tempero.name}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed">{tempero.description}</p>
+                  <h3 className="font-bold text-sm sm:text-lg text-gray-900 mb-1 sm:mb-2 leading-tight">
+                    {tempero.name}
+                  </h3>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed">
+                    {tempero.description}
+                  </p>
                   <div className="flex sm:flex-row sm:justify-between sm:items-center gap-2 lg:gap-0 items-center">
-                    <span className="text-lg  font-bold text-red-600">{tempero.price}</span>
-                    <span className={`text-xs sm:text-sm font-medium ${
-                      selectedTemperos.includes(tempero.id) ? 'text-green-600' : 'text-gray-500'
-                    }`}>
-                      {selectedTemperos.includes(tempero.id) ? 'Selecionado!' : 'Toque para selecionar'}
+                    <span className="text-lg  font-bold text-red-600">
+                      {tempero.price}
+                    </span>
+                    <span
+                      className={`text-xs sm:text-sm font-medium ${
+                        selectedTemperos.includes(tempero.id)
+                          ? "text-green-600"
+                          : "text-gray-500"
+                      }`}
+                    >
+                      {selectedTemperos.includes(tempero.id)
+                        ? "Selecionado!"
+                        : "Toque para selecionar"}
                     </span>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center mt-8 md:mt-12">
-            <Button 
+            <Button
               onClick={handleSelectedTemperos}
               className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-12 text-sm sm:text-xl rounded-full shadow-lg"
             >
@@ -280,29 +307,45 @@ const Index = () => {
               <div className="bg-red-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
                 <ShoppingCart className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
               </div>
-              <h3 className="font-bold text-base sm:text-lg mb-2">1. Selecione</h3>
-              <p className="text-gray-600 text-sm sm:text-base">Clique nos temperos que deseja</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">
+                1. Selecione
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Clique nos temperos que deseja
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-green-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
                 <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
               </div>
-              <h3 className="font-bold text-base sm:text-lg mb-2">2. WhatsApp</h3>
-              <p className="text-gray-600 text-sm sm:text-base">Clique no botão verde para finalizar</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">
+                2. WhatsApp
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Clique no botão verde para finalizar
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-yellow-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
                 <CreditCard className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-600" />
               </div>
-              <h3 className="font-bold text-base sm:text-lg mb-2">3. Pague via Pix</h3>
-              <p className="text-gray-600 text-sm sm:text-base">Pagamento rápido e seguro</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">
+                3. Pague via Pix
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Pagamento rápido e seguro
+              </p>
             </div>
             <div className="text-center">
               <div className="bg-green-100 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 md:mb-4">
                 <Home className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
               </div>
-              <h3 className="font-bold text-base sm:text-lg mb-2">4. Receba em casa</h3>
-              <p className="text-gray-600 text-sm sm:text-base">Entrega rápida e segura</p>
+              <h3 className="font-bold text-base sm:text-lg mb-2">
+                4. Receba em casa
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Entrega rápida e segura
+              </p>
             </div>
           </div>
         </div>
@@ -318,18 +361,25 @@ const Index = () => {
             {depoimentos.map((depoimento, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="p-4 sm:p-6">
-                  <img 
-                    src={depoimento.image} 
+                  <img
+                    src={depoimento.image}
                     alt={depoimento.name}
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 md:mb-4"
                   />
                   <div className="flex justify-center mb-3 md:mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"
+                      />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-3 md:mb-4 italic text-sm sm:text-base">"{depoimento.text}"</p>
-                  <p className="font-bold text-gray-900 text-sm sm:text-base">{depoimento.name}</p>
+                  <p className="text-gray-600 mb-3 md:mb-4 italic text-sm sm:text-base">
+                    "{depoimento.text}"
+                  </p>
+                  <p className="font-bold text-gray-900 text-sm sm:text-base">
+                    {depoimento.name}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -347,23 +397,27 @@ const Index = () => {
             Deixe seus dados e receba promoções especiais direto no WhatsApp
           </p>
           <form onSubmit={handleLeadSubmit} className="space-y-4">
-            <Input 
+            <Input
               type="text"
               placeholder="Seu nome"
               value={leadForm.name}
-              onChange={(e) => setLeadForm({...leadForm, name: e.target.value})}
+              onChange={(e) =>
+                setLeadForm({ ...leadForm, name: e.target.value })
+              }
               className="w-full text-sm sm:text-base"
               required
             />
-            <Input 
+            <Input
               type="tel"
               placeholder="Seu WhatsApp"
               value={leadForm.phone}
-              onChange={(e) => setLeadForm({...leadForm, phone: e.target.value})}
+              onChange={(e) =>
+                setLeadForm({ ...leadForm, phone: e.target.value })
+              }
               className="w-full text-sm sm:text-base"
               required
             />
-            <Button 
+            <Button
               type="submit"
               className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 text-sm sm:text-base"
             >
@@ -380,10 +434,11 @@ const Index = () => {
             Transforme sua comida com sabor de verdade
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-6 md:mb-8">
-            Não perca mais tempo com temperos sem sabor. Experimente a diferença dos nossos temperos artesanais!
+            Não perca mais tempo com temperos sem sabor. Experimente a diferença
+            dos nossos temperos artesanais!
           </p>
-          <Button 
-            onClick={() => window.open(whatsappLink, '_blank')}
+          <Button
+            onClick={() => window.open(whatsappLink, "_blank")}
             className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-4 sm:py-6 px-8 sm:px-12 text-lg sm:text-xl rounded-full shadow-lg transform transition hover:scale-105"
           >
             🟢 Quero fazer meu pedido!
@@ -401,16 +456,18 @@ const Index = () => {
             WhatsApp: (11) 98272-2426 | Pagamento via Pix
           </p>
           <div className="flex items-center justify-center gap-2">
-            <span className="text-gray-400 text-xs sm:text-sm">Desenvolvido por</span>
-            <a 
-              href="https://baloonmkt.com.br" 
-              target="_blank" 
+            <span className="text-gray-400 text-xs sm:text-sm">
+              Desenvolvido por
+            </span>
+            <a
+              href="https://baloonmkt.com.br"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <img 
-                src="/lovable-uploads/31ada4f5-7c94-479a-b0a6-0bacbe0a2024.png" 
-                alt="Baloon Marketing" 
+              <img
+                src="/lovable-uploads/31ada4f5-7c94-479a-b0a6-0bacbe0a2024.png"
+                alt="Baloon Marketing"
                 className="h-6 sm:h-8"
               />
             </a>
