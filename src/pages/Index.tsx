@@ -19,8 +19,8 @@ import { Description } from "@radix-ui/react-toast";
 const Index = () => {
   const { toast } = useToast();
   const [timeLeft, setTimeLeft] = useState({
-    hours: 23,
-    minutes: 59,
+    hours: 2,
+    minutes: 20,
     seconds: 59,
   });
   const [leadForm, setLeadForm] = useState({ name: "", phone: "" });
