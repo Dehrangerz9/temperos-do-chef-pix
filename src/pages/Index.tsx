@@ -60,7 +60,7 @@ const Index = () => {
   const temperos = [
     {
       id: 1,
-      name: "Tempero Chimichurri",
+      name: "Chimichurri",
       description:
         "Feito de ervas desidratadas, como a salsinha, o orégano e o manjericão, entre outras",
       price: "R$ 32,00/KG",
@@ -68,7 +68,7 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "Açãfrão Premium",
+      name: "Açafrão Premium",
       description:
         "Açafrão-da-terra de alta qualidade, com sabor marcante e coloração intensa para pratos mediterrâneos.",
       price: "R$ 15,00/KG",
@@ -92,7 +92,7 @@ const Index = () => {
     },
     {
       id:5,
-      name: "Coentro Em Grão",
+      name: "Coentro em Grão",
       description:
         "Coentro em grãos, de aroma marcante e sabor levemente cítrico, ideal para marinadas.",
       price: "R$ 12,00/KG",
