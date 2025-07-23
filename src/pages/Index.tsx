@@ -94,7 +94,7 @@ const Index = () => {
       id:5,
       name: "Coentro Em Grão",
       description:
-        "Coentro em grãos, de aroma marcante e sabor levemente cítrico, ideal para caldos, ensopados e marinadas.",
+        "Coentro em grãos, de aroma marcante e sabor levemente cítrico, ideal para marinadas.",
       price: "R$ 12,00/KG",
       image:"/tempero-coentro-em-grao.jpg",
     },
@@ -102,7 +102,7 @@ const Index = () => {
       id:6,
       name: "Manjericão",
       description:
-      "Manjericão desidratado em flocos, com aroma fresco e adocicado, perfeito para massas, molhos e pizzas.",
+      "Manjericão desidratado em flocos, com aroma fresco e adocicado, perfeito para molhos e pizzas.",
       price:"R$20,00/KG",
       image:"/tempero-manjericao.jpg",
     },
