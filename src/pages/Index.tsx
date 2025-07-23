@@ -248,7 +248,7 @@ const Index = () => {
             🎉 OFERTA ESPECIAL - SÓ HOJE! 🎉
           </h2>
           <p className="text-lg sm:text-xl mb-4">
-            Combo dos 5 mais vendidos com 10% OFF
+            Combo dos 10 mais vendidos com 10% OFF
           </p>
           <div className="flex justify-center gap-2 sm:gap-4 mb-4 md:mb-6">
             <div className="bg-white text-red-600 px-2 sm:px-4 py-2 rounded-lg font-bold text-sm sm:text-base">
