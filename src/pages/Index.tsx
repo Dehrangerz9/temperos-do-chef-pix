@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { Description } from "@radix-ui/react-toast";
 
 const Index = () => {
   const { toast } = useToast();
@@ -99,6 +100,11 @@ const Index = () => {
     },
     {
       id:6,
+      name: "Manjericão",
+      description:
+      "Conhecido no mundo inteiro por seu aroma e sabor, o manjericão em flocos desidratado é utilizado nas mais diversas receitas, além dos muitos benefícios que traz para saúde. O manjericão é uma especiaria pertencente à família Lamiaceae faz parte de um grupo de plantas medicinais, é uma erva aromática rica em óleos essenciais, como geraniol, eugenol e linalol, além de ter ótimas quantidades de taninos, saponinas e flavonoides, com propriedades antiespasmódica, digestiva, diurética, sedativa e antioxidante, que ajudam a prevenir e combater problemas de saúde, como gripes, pressão alta, infarto ou insônia.",
+      price:"R$20,00/KG",
+      image:"/tempero-manjericao.jpg",
     },
   ];
 
