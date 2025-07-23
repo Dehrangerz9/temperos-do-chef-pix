@@ -52,7 +52,7 @@ const Index = () => {
   )}`;
 
   const comboMessage =
-    "Olá! Quero aproveitar a oferta especial do Combo dos 5 temperos mais vendidos com 10% OFF!";
+    "Olá! Quero aproveitar a oferta especial do Combo dos 10 temperos mais vendidos com 10% OFF!";
   const comboWhatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     comboMessage
   )}`;
